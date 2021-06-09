@@ -5,7 +5,7 @@
     ]
   },
   "hosting": {
-    "site" : "l1p1-123techstarateya",
+    "site" : "cms5373-lecture1-app",
     "public": "public",
     "ignore": [
       "firebase.json",

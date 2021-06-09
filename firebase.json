@@ -5,7 +5,7 @@
         ]
     },
     "hosting": {
-        "site": "app-ateya-cmcs-5373.web.app",
+        "site": "l1aundvswimrbateyal1",
         "public": "public",
         "ignore": [
             "firebase.json",

@@ -9,6 +9,11 @@ export const formCreateThread = document.getElementById('form-create-thread')
 export const formDeleteThread = document.getElementById('form-delete-thread')
 export const formSearch = document.getElementById('form-search')
 export const formSignUp = document.getElementById('form-create-new-account')
+export const formCreateThreadError = {
+    title: document.getElementById('form-create-thread-error-title'),
+    keywords: document.getElementById('form-create-thread-error-keywords'),
+    content: document.getElementById('form-create-thread-error-content'),
+}
 
 // main content of each page
 export const mainContent = document.getElementById('main-content')

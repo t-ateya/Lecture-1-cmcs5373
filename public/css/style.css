@@ -6,12 +6,12 @@
     background-color: navy;
 }
 
-li {    
+li {
     padding-right: 10px;
 }
 
 input {
-    display:block;
+    display: block;
     margin: 8px;
     padding: 8px;
     border-width: 0 0 2px 0;
@@ -39,3 +39,6 @@ hr {
     color: red;
 }
 
+.form-create-thread-error {
+    color: red;
+}

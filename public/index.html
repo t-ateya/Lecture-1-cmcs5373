@@ -20,37 +20,37 @@
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="mr-auto navbar-nav">
                     <li class="nav-item modal-menus-pre-auth">
 
                         <button class="btn btn-outline-danger" data-toggle="modal" data-target="#modal-signin-form">
-              Sign In
-            </button>
+                            Sign In
+                        </button>
                     </li>
                     <li class="nav-item modal-menus-post-auth">
                         <button id="menu-home" class="btn btn-outline-primary">
-              Home</button>
+                            Home</button>
                     </li>
                     <li class="nav-item modal-menus-post-auth">
                         <button id="menu-about" class="btn btn-outline-primary">
-              About
-            </button>
+                            About
+                        </button>
                     </li>
                     <li class="nav-item modal-menus-post-auth">
                         <button id="menu-signout" class="btn btn-outline-danger">
-              Sign Out
-            </button>
+                            Sign Out
+                        </button>
                     </li>
                 </ul>
-                <form id="form-search" class="form-inline my-2 my-lg-0 modal-menus-post-auth">
+                <form id="form-search" class="my-2 form-inline my-lg-0 modal-menus-post-auth">
                     <input name="searchKeywords" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
+                    <button class="my-2 btn btn-outline-success my-sm-0" type="submit">
+                        Search
+                    </button>
                 </form>
             </div>
 
@@ -68,8 +68,8 @@
                 <div id="modal-popupinfo-body" class="modal-body"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            Close
-          </button>
+                        Close
+                    </button>
                 </div>
             </div>
         </div>
@@ -85,8 +85,8 @@
                         Sign In, Please!
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form id="form-signin" method="post">
@@ -100,8 +100,8 @@
                         <div>
 
                             <button type="submit" class="btn btn-outline-primary">
-                Sign In
-              </button>
+                                Sign In
+                            </button>
 
                         </div>
 
@@ -121,8 +121,8 @@
                         Confirm Delete
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form id="form-delete-thread" method="post">
@@ -151,24 +151,27 @@
                         Create New Thread
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form id="form-create-thread" method="post">
                         <div>
                             <input type="text" name="title" placeholder="Title of the thread" />
+                            <p class="text-danger small" id="form-create-thread-error-title"></p>
                         </div>
                         <div>
                             <input type="text" name="keywords" placeholder="search keys separated by a space" />
+                            <p class="text-danger small" id="form-create-thread-error-keywords"></p>
                         </div>
                         <div>
                             <textarea name="content" cols="50" rows="5" placeholder="contents of the thread"></textarea>
+                            <p class="text-danger small" id="form-create-thread-error-content"></p>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-outline-primary">
-                Create
-              </button>
+                                Create
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -184,8 +187,8 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="modal-create-new-account-label">Create New Account</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form id="form-create-new-account" method="post">
@@ -219,7 +222,7 @@
             <br />
             <br /> No account yet?<br />
             <button class="btn btn-outline-danger" data-toggle="modal" data-target="#modal-create-new-account">
-        Create a New Account</button>
+                Create a New Account</button>
         </div>
     </center>
     <!-- update the version number as needed -->

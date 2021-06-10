@@ -6,7 +6,6 @@ export const menuAbout = document.getElementById('menu-about')
 // forms
 export const formSignin = document.getElementById('form-signin')
 export const formCreateThread = document.getElementById('form-create-thread')
-export const formDeleteThread = document.getElementById('form-delete-thread')
 export const formSearch = document.getElementById('form-search')
 export const formSignUp = document.getElementById('form-create-new-account')
 export const formCreateThreadError = {

@@ -98,26 +98,6 @@ export async function home_page() {
         return
     }
     buildHomeScreen(threadList, true)
-
-    // Implementing delete button
-    if (document.getElementById('button-delete-thread') != null) {
-        document.getElementById('button-delete-thread').addEventListener('click', async => {
-            const threadId = document.getElementById('delete-threadId').value
-                //console.log(threadId)
-            const button = document.getElementById('button-delete-thread')
-            const label = Util.disableButton(button)
-            try {
-                FirebaseController.deleteThread(threadId)
-                FirebaseController.deleteThreadMessage(threadId)
-
-            } catch (e) {
-                if (Constant.DEV) console.log(e)
-                Util.popupInfo('Error', JSON.stringify(e))
-            }
-            home_page()
-            Util.enableButton(button, label)
-        })
-    }
 }
 
 export function buildHomeScreen(threadList, newButton) {
@@ -131,19 +111,17 @@ export function buildHomeScreen(threadList, newButton) {
 
     html += `
     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Action</th>
-      <th scope="col"></th>
-      <th scope="col">Title</th>
-      <th scope="col">Keywords</th>
-      <th scope="col">Posted By</th>
-      <th scope="col">Content</th>
-      <th scope="col">Posted At</th>
-    </tr>
-  </thead>
-  <tbody id="thread-body-tag">
-    `
+        <thead>
+            <tr>
+            <th scope="col">Action</th>
+            <th scope="col">Title</th>
+            <th scope="col">Keywords</th>
+            <th scope="col">Posted By</th>
+            <th scope="col">Content</th>
+            <th scope="col">Posted At</th>
+            </tr>
+        </thead>
+    <tbody id="thread-body-tag">`
 
     threadList.forEach(thread => {
         html += '<tr>' + buildThreadView(thread) + '</tr>'
@@ -157,7 +135,6 @@ export function buildHomeScreen(threadList, newButton) {
     }
 
     Element.mainContent.innerHTML = html
-
     ThreadPage.addThreadViewEvents()
 }
 
@@ -169,14 +146,7 @@ function buildThreadView(thread) {
                     <input type="hidden" name="threadId" value="${thread.docId}">
                     <button type="submit" class ="btn btn-outline-primary">View</button>
                 </form>
-            </td>  
-                      
-            <td>
-            <div>
-            <input type="hidden" name="delete-threadId" id="delete-threadId" value="${thread.docId}">
-            <button id="button-delete-thread" class="btn btn-outline-danger"}">Delete</button>
-            </div>
-            </td>                 
+            </td>               
             <td>${thread.title}</td>
             <td>${!thread.keywordsArray || !Array.isArray(thread.keywordsArray) ? '' : thread.keywordsArray.join(' ')}</td>
             <td>${thread.email}</td>

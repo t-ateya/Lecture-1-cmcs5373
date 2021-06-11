@@ -162,10 +162,8 @@ function buildThreadView(thread) {
                     <button type="submit" class ="btn btn-outline-primary">View</button>
                 </form>
             </td>  
-                      
-            <td>
-            <button disabled class="btn btn-outline-danger" data-toggle="modal" data-target="#${Constant.iDmodalDeleteForm}">Delete</button>
-            </td>                 
+                     
+            
             <td>${thread.title}</td>
             <td>${!thread.keywordsArray || !Array.isArray(thread.keywordsArray) ? '' : thread.keywordsArray.join(' ')}</td>
             <td>${thread.email}</td>

@@ -77,25 +77,6 @@ export async function home_page() {
     }
     buildHomeScreen(threadList, true)
 
-    // Implementing delete button
-    if (document.getElementById('button-delete-thread') != null) {
-        document.getElementById('button-delete-thread').addEventListener('click', async => {
-            const threadId = document.getElementById('delete-threadId').value
-                //console.log(threadId)
-            const button = document.getElementById('button-delete-thread')
-            const label = Util.disableButton(button)
-            try {
-                FirebaseController.deleteThread(threadId)
-                FirebaseController.deleteThreadMessage(threadId)
-
-            } catch (e) {
-                if (Constant.DEV) console.log(e)
-                Util.popupInfo('Error', JSON.stringify(e))
-            }
-            home_page()
-            Util.enableButton(button, label)
-        })
-    }
 }
 
 export function buildHomeScreen(threadList, newButton) {
@@ -119,7 +100,6 @@ export function buildHomeScreen(threadList, newButton) {
   <thead>
     <tr>
       <th scope="col">Action</th>
-      <th scope="col"></th>
       <th scope="col">Title</th>
       <th scope="col">Keywords</th>
       <th scope="col">Posted By</th>
@@ -156,12 +136,6 @@ function buildThreadView(thread) {
                 </form>
             </td>  
                       
-            <td>
-            <div>
-            <input type="hidden" name="delete-threadId" id="delete-threadId" value="${thread.docId}">
-            <button id="button-delete-thread" class="btn btn-outline-danger"}">Delete</button>
-            </div>
-            </td>                 
             <td>${thread.title}</td>
             <td>${thread.keywordsArray.join(' ')}</td>
             <td>${thread.email}</td>
@@ -178,9 +152,6 @@ function buildThreadView(thread) {
                 </form>
             </td>  
                       
-            <td>
-            <button disabled class="btn btn-outline-danger" data-toggle="modal" data-target="#${Constant.iDmodalDeleteForm}">Delete</button>
-            </td>                 
             <td>${thread.title}</td>
             <td>${thread.keywordsArray.join(' ')}</td>
             <td>${thread.email}</td>

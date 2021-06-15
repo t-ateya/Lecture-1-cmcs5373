@@ -78,7 +78,7 @@ export function addEventListeners() {
             if (Constant.DEV) console.log(e)
             Util.popupInfo('Failed to add', JSON.stringify(e), Constant.iDmodalCreateNewThread)
         }
-        home_page()
+        await home_page()
         Util.enableButton(button, label)
     })
 }
@@ -113,12 +113,12 @@ export function buildHomeScreen(threadList, newButton) {
     <table class="table table-striped">
         <thead>
             <tr>
-            <th scope="col">Action</th>
-            <th scope="col">Title</th>
-            <th scope="col">Keywords</th>
-            <th scope="col">Posted By</th>
-            <th scope="col">Content</th>
-            <th scope="col">Posted At</th>
+                <th scope="col">Action</th>
+                <th scope="col">Title</th>
+                <th scope="col">Keywords</th>
+                <th scope="col">Posted By</th>
+                <th scope="col">Content</th>
+                <th scope="col">Posted At</th>
             </tr>
         </thead>
     <tbody id="thread-body-tag">`

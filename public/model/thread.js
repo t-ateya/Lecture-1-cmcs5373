@@ -30,6 +30,6 @@ export class Thread {
     validate_keywords() {
         if (this.keywordsArray &&
             this.keywordsArray.length > 0) return null;
-        return 'invalide: at least one keyword';
+        return 'invalid: at least one keyword';
     }
 }
